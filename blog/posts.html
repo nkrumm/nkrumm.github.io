@@ -13,7 +13,7 @@ sidebarlink: posts
 		{{ post.excerpt }}
   	</div>
 	<div class="four columns" style="text-align: right">
-		{{ post.date }}
+		{{ post.date | date_to_long_string }}
 		<br/>
 		{% for tag in post.tags %}
 			<a href="" class="keywords">:{{ tag }}</a>

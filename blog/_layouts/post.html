@@ -10,7 +10,7 @@ sidebarlink: posts
 	{{ content }}
 	</div>
 <div class="four columns" style="text-align: right">
-	{{ page.date }}
+	{{ page.date | date_to_long_string }}
 	<br/>
 	{% for tag in page.tags %}
 		<a href="" class="keywords">:{{ tag }}</a>
