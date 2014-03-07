@@ -7,13 +7,12 @@ title: nik_krumm | publications
 <div class="twelve columns">
 <h3>Publications</h3>
 {% for pub in site.data.publications %}
-	
+		<p>
 		<h5>{{ pub.title }}</h5>
-		<p><em>{{ pub.journal }}</em></p>
-		{% for a in pub.authors %}
-			{{ a }}, 
-		{% endfor %}
-		<hr />
+		<span style="font-weight: bold">{{ pub.year }}</span> <em>{{ pub.journal }}</em>, {{ pub.page_info }}<br/>
+		
+		{% for a in pub.authors %}{{ a }}, {% endfor %}
+		</p>
 {% endfor %}
 
 
