@@ -1,9 +1,17 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
-<div class="post">
-{{ content }}
+<div class="twelve columns">
+	<h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+	<hr />
+</div>
+<div class="eight columns">
+	{{ content }}
+	</div>
+<div class="four columns" style="text-align: right">
+	{{ page.date }}
+	<br/>
+	{% for tag in page.tags %}
+		<a href="" class="keywords">:{{ tag }}</a>
+	{% endfor %}
 </div>
