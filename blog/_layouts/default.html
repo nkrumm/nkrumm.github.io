@@ -47,7 +47,10 @@
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="">
-
+      <!-- Page-specific styling /-->
+      <style>
+        div#sidebar li a[id="{{ page.sidebarlink }}-link"] { color: #888; }
+      </style>
     </head>
     <body>
   <div id="banner">
@@ -59,14 +62,14 @@
     </div>
     <div class="four columns" id="sidebar">
       <ul>
-        <li class='selected'><a href='/index.html'>home</a></li>
-        <li><a href='/posts.html'>/posts</a></li>
-        <li><a href='/publications.html'>/publications</a></li>
-        <li><a href=''>/about</a></li>
-        <li><a href=''>/github</a></li>
-        <li><a href=''>/projects</a></li>
-        <li><a href=''>/api</a></li>
-        <li><a href=''>/contact</a></li>
+        <li><a id="index-link" href='/index.html'>home</a></li>
+        <li><a id="posts-link" href='/posts.html'>/posts</a></li>
+        <li><a id="publications-link" href='/publications.html'>/publications</a></li>
+        <li><a id="about-link" href=''>/about</a></li>
+        <li><a id="github-link" href=''>/github</a></li>
+        <li><a id="projects-link" href=''>/projects</a></li>
+        <li><a id="api-link" href=''>/api</a></li>
+        <li><a id="contact-link" href=''>/contact</a></li>
       </ul>
 
       <!-- <img id="headshot" src='images/niklas_krumm.jpg'/> -->
