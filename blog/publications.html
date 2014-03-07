@@ -1,0 +1,20 @@
+---
+layout: default
+title: nik_krumm | publications
+---
+
+
+<div class="twelve columns">
+<h3>Publications</h3>
+{% for pub in site.data.publications %}
+	
+		<h5>{{ pub.title }}</h5>
+		<p><em>{{ pub.journal }}</em></p>
+		{% for a in pub.authors %}
+			{{ a }}, 
+		{% endfor %}
+		<hr />
+{% endfor %}
+
+
+</div>
