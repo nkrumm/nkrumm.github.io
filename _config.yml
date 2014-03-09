@@ -1,3 +1,5 @@
-name: Your New Jekyll Site
+name: "nik krumm | blog"
 markdown: redcarpet
 pygments: true
+description: Nik Krumm's personal blog.
+url: nkrumm.github.io
