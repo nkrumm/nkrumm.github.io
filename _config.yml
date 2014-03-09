@@ -3,3 +3,22 @@ markdown: redcarpet
 pygments: true
 description: Nik Krumm's personal blog.
 url: nkrumm.github.io
+
+scholar:
+  style: apa
+  locale: en
+
+  sort_by: year
+  order: descending
+
+  source: ./_data
+  bibliography: bibliography.bib
+  bibliography_template: "bib"
+
+  replace_strings: true
+
+  # details_dir:    bibliography
+  # details_layout: bibtex.html
+  # details_link:   Details
+
+  query: "@*"

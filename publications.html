@@ -6,15 +6,17 @@ sidebarlink: publications
 
 
 <div class="twelve columns">
-<h3>Publications</h3>
+<h3>Selected publications</h3>
 {% for pub in site.data.publications %}
-		<p>
-		<h5>{{ pub.title }}</h5>
-		<span style="font-weight: bold">{{ pub.year }}</span> <em>{{ pub.journal }}</em>, {{ pub.page_info }}<br/>
-		
-		{% for a in pub.authors %}{{ a }}, {% endfor %}
-		</p>
+	<p>
+	<h5>{{ pub.title }}</h5>
+	<span style="font-weight: bold">{{ pub.year }}</span> <em>{{ pub.journal }}</em>, {{ pub.page_info }}<br/>
+	
+	{% for a in pub.authors %}{{ a }}, {% endfor %}
+	</p>
+
 {% endfor %}
 
-
+<h3>Complete list</h3>
+{% bibliography %}
 </div>
