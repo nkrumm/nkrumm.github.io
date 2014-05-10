@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+    <head>
+
+      <!-- Basic Page Needs
+      ================================================== -->
+      <meta charset="utf-8">
+      <title>Keeping a clean bioinformatics workbench</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <!-- Mobile Specific Metas
+      ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+      <!-- Google fonts
+      ================================================== -->
+      <link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
+      <!-- CSS
+      ================================================== -->
+      <link rel="stylesheet" href="/css/base.css">
+      <link rel="stylesheet" href="/css/skeleton.css">
+      <link rel="stylesheet" href="/css/layout.css">
+      <link rel="stylesheet" href="/css/custom.css">
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+      <!-- Favicons
+      ================================================== -->
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+      
+      <!-- FontAwesome
+      ================================================== -->
+      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+      
+      <!-- Jquery
+      ================================================== -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+      <!-- Metadata /-->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="humans.txt">
+      <!-- RSS Feed /-->
+      <link rel="alternate" type="application/rss+xml" title="nik krumm | blog" href="nkrumm.github.io/feed.xml">
+      <!-- Facebook Metadata /-->
+      <meta property="fb:page_id" content="">
+      <meta property="og:image" content="">
+      <meta property="og:description" content="">
+      <meta property="og:title" content="">
+      <!-- Google+ Metadata /-->
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="">
+      <!-- Page-specific styling /-->
+      <style>
+        div#sidebar li a[id="posts-link"] { color: #888; }
+      </style>
+    </head>
+    <body>
+  <div id="banner">
+  <!-- <img  src="images/mont-fort.jpg" /> -->
+  </div>
+  <div class="container clearfix">
+    <div class="sixteen columns" style="margin-bottom: 30px !important">
+      <!-- a spacer between the banner image and the content-->
+    </div>
+    <div class="four columns" id="sidebar">
+      <ul>
+        <li><a id="index-link" href='/index.html'>home</a></li>
+        <li><a id="posts-link" href='/posts.html'>/posts</a></li>
+        <li><a id="publications-link" href='/publications.html'>/publications</a></li>
+        <li><a id="about-link" href='/about.html'>/about+cv</a></li>
+        <li><a id="github-link" href='http://github.com/nkrumm'>/github</a></li>
+        <li><a id="projects-link" href=''>/projects</a></li>
+        <!-- <li><a id="api-link" href=''>/api</a></li> -->
+        <li><a id="contact-link" href=''>/contact</a></li>
+      </ul>
+
+      <!-- <img id="headshot" src='images/niklas_krumm.jpg'/> -->
+    </div>
+    
+    <link href="/css/coderay-github.css" media="screen" rel="stylesheet" type="text/css">
+
+<div class="twelve columns" style='padding-bottom: 15px'>
+	<span class='gfont' style="font-weight: 300">May 9, 2014</span>
+	<h1 class='gfont'>Keeping a clean bioinformatics workbench</h1>
+	
+		<a href="" class="keywords">:bioinformatics</a>
+	
+</div>
+<div class="eight columns">
+	<article><blockquote>
+  <p>If a cluttered desk is a sign of a cluttered mind, of what, then, is an empty desk a sign?
+–Albert Einstein</p>
+</blockquote>
+
+<p>A good quote— but messy <em>desks</em> should not be confused with messy <em>workspaces</em>. Whether at the wet bench or /deep/in/a/directory/tree/, organization is critical for accurate, repeatable analyses and workflows. Why then, is it so much easier to keep the wet bench clean, while the ‘dry bench’ seemingly always ends up like this:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>$ ls
+-rw-rw---- 1 ****** ******   301 Oct  8  2012 do_it.pl
+-rw-rw---- 1 ****** ******   283 Sep 27  2012 find.sh
+-rw-rw---- 1 ****** ******  1450 Sep 27  2012 here
+-rw-rw---- 1 ****** ******  2813 Oct  8  2012 out.txt
+-rw-rw---- 1 ****** ******     0 Oct  8  2012 out.xt
+-rw-rw---- 1 ****** ****** 11543 Oct  8  2012 sort.txt
+</pre></div>
+</div>
+</div>
+
+<p>(Incredibly, this is actually a real directory I found recently while file-hunting on some shared NFS drives.)</p>
+
+<p>Building clean bioinformatics habits requires attention to all levels of organization. To a large extent, git, ample documentation, and repeatable pipelines can provide a scaffold (the latter may be the topic of a future post). <strong>But then there are the dozens of little tasks that you want to run “just once”</strong>—  data scrubbing, header reformatting, sort/filter commands run “just this one time”, file exporting/conversion, etc. For these tasks, “heavy” solutions are not required nor wanted. Not every little task must be part of a git commit, not every file is created equally, and sometimes things just don’t work out. For these tasks, I’ve compiled some simple tips and tricks that I like to use, in the hopes that they may come in handy for others as well:</p>
+
+<ol>
+  <li>I <strong>use an <code>old/</code> folder</strong> to keep outdated files that I’m just not ready to delete. Creating a new version of a table? Bump the version in the filename and move old versions to <code>old/</code>. These can be purged later on.</li>
+  <li><strong>Use a <code>.temp</code> extension</strong> on your files if they are temp files! You can feel good about deleting these at any point later on.</li>
+  <li>Create two separate scripts for pipeline code: In addition to your actual code/script/pipeline (<code>X.sh</code>), <strong>create a <code>do_X.sh</code> script</strong> which actually runs the <code>X.sh</code> script. This will serve to remind you of how to run the script, which command line options you used, and which input/output files were needed or created.</li>
+  <li><strong>Keep an <code>analysis.txt</code></strong> (or <code>analysis.md</code>) file in each main folder to organize your thoughts and remind yourself and others of critical choices made in the analysis which may not be self evident elsewhere. This file can contain a mix of documentation, input commands and brief/representative output. I often include word/line counts of output files and a brief <code>head</code> of output files. This makes it easy to see if anything has changed if re-running the analysis.</li>
+  <li><strong>Use “numbered filenames”</strong> if not (or even if) creating a pipeline of multiple steps. <code>01_create_calls.py</code>, <code>02_filter_calls.py</code>, <code>03_print_calls.py</code> gives a new user a quick-and-dirty intro to your pipeline, just from the filenames.</li>
+</ol>
+
+<p>Got any other suggestions? Chime in on <a href="https://twitter.com/nik_krumm">twitter</a> with others and I’ll add them here!</p>
+</article>
+</div>
+<div id="post-gutter" class="four columns" style="text-align: right">
+	
+</div>
+
+<script>
+	if (document.documentElement.clientWidth >= 767) {
+		$(".footnotes").detach().appendTo("#post-gutter")
+		footnotes = $(".footnotes ol li")
+		for (var i = footnotes.length - 1; i >= 0; i--) {
+			var ref_id = footnotes[i].id.replace("fn:", "fnref:")
+			$(footnotes[i]).offset({top: $(document.getElementById(ref_id)).offset()["top"]})
+		};
+	}
+</script>
+    
+  </div><!-- container -->
+
+
+<!-- End Document
+================================================== -->
+</body>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50191887-1', 'nkrumm.github.io');
+  ga('send', 'pageview');
+
+</script>
+</html>

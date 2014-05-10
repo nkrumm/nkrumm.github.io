@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>nik krumm | blog</title>
+		<description>Nik Krumm&#39;s personal blog.</description>		
+		<link>nkrumm.github.io</link>
+		<atom:link href="nkrumm.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Keeping a clean bioinformatics workbench</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;If a cluttered desk is a sign of a cluttered mind, of what, then, is an empty desk a sign?
+–Albert Einstein&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A good quote— but messy &lt;em&gt;desks&lt;/em&gt; should not be confused with messy &lt;em&gt;workspaces&lt;/em&gt;. Whether at the wet bench or /deep/in/a/directory/tree/, organization is critical for accurate, repeatable analyses and workflows. Why then, is it so much easier to keep the wet bench clean, while the ‘dry bench’ seemingly always ends up like this:&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;$ ls
+-rw-rw---- 1 ****** ******   301 Oct  8  2012 do_it.pl
+-rw-rw---- 1 ****** ******   283 Sep 27  2012 find.sh
+-rw-rw---- 1 ****** ******  1450 Sep 27  2012 here
+-rw-rw---- 1 ****** ******  2813 Oct  8  2012 out.txt
+-rw-rw---- 1 ****** ******     0 Oct  8  2012 out.xt
+-rw-rw---- 1 ****** ****** 11543 Oct  8  2012 sort.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(Incredibly, this is actually a real directory I found recently while file-hunting on some shared NFS drives.)&lt;/p&gt;
+
+&lt;p&gt;Building clean bioinformatics habits requires attention to all levels of organization. To a large extent, git, ample documentation, and repeatable pipelines can provide a scaffold (the latter may be the topic of a future post). &lt;strong&gt;But then there are the dozens of little tasks that you want to run “just once”&lt;/strong&gt;—  data scrubbing, header reformatting, sort/filter commands run “just this one time”, file exporting/conversion, etc. For these tasks, “heavy” solutions are not required nor wanted. Not every little task must be part of a git commit, not every file is created equally, and sometimes things just don’t work out. For these tasks, I’ve compiled some simple tips and tricks that I like to use, in the hopes that they may come in handy for others as well:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I &lt;strong&gt;use an &lt;code&gt;old/&lt;/code&gt; folder&lt;/strong&gt; to keep outdated files that I’m just not ready to delete. Creating a new version of a table? Bump the version in the filename and move old versions to &lt;code&gt;old/&lt;/code&gt;. These can be purged later on.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use a &lt;code&gt;.temp&lt;/code&gt; extension&lt;/strong&gt; on your files if they are temp files! You can feel good about deleting these at any point later on.&lt;/li&gt;
+  &lt;li&gt;Create two separate scripts for pipeline code: In addition to your actual code/script/pipeline (&lt;code&gt;X.sh&lt;/code&gt;), &lt;strong&gt;create a &lt;code&gt;do_X.sh&lt;/code&gt; script&lt;/strong&gt; which actually runs the &lt;code&gt;X.sh&lt;/code&gt; script. This will serve to remind you of how to run the script, which command line options you used, and which input/output files were needed or created.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Keep an &lt;code&gt;analysis.txt&lt;/code&gt;&lt;/strong&gt; (or &lt;code&gt;analysis.md&lt;/code&gt;) file in each main folder to organize your thoughts and remind yourself and others of critical choices made in the analysis which may not be self evident elsewhere. This file can contain a mix of documentation, input commands and brief/representative output. I often include word/line counts of output files and a brief &lt;code&gt;head&lt;/code&gt; of output files. This makes it easy to see if anything has changed if re-running the analysis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use “numbered filenames”&lt;/strong&gt; if not (or even if) creating a pipeline of multiple steps. &lt;code&gt;01_create_calls.py&lt;/code&gt;, &lt;code&gt;02_filter_calls.py&lt;/code&gt;, &lt;code&gt;03_print_calls.py&lt;/code&gt; gives a new user a quick-and-dirty intro to your pipeline, just from the filenames.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Got any other suggestions? Chime in on &lt;a href=&quot;https://twitter.com/nik_krumm&quot;&gt;twitter&lt;/a&gt; with others and I’ll add them here!&lt;/p&gt;
+</description>
+				<pubDate>Fri, 09 May 2014 00:00:00 -0700</pubDate>
+				<link>nkrumm.github.io/posts/2014/05/09/keeping-a-clean-bioinformatics-workbench.html</link>
+				<guid isPermaLink="true">nkrumm.github.io/posts/2014/05/09/keeping-a-clean-bioinformatics-workbench.html</guid>
+			</item>
+		
+			<item>
+				<title>Hello, and: the goals of this blog </title>
+				<description>&lt;p&gt;This blog is an experiment for me, and I’m not particularly sure it will be a success. As a teenager, I was a terrible diary writer, having written perhaps two or three entries that will hopefully never see the light of day [&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;]. As a graduate student at the &lt;a href=&quot;http://gs.washington.edu&quot;&gt;UW Genome Sciences Department&lt;/a&gt;, I don’t spend nearly enough time writing, and when I do, the writing is often forcibly passive:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We investigated… 
+We found that… This suggests…
+We present evidence for… &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is OK, of course— writing in this style is pleasantly humble, lets the data stand for itself, and allows for further discussion and work. But on the other hand, it complicates the sentences, and it is certainly not the best way to &lt;strong&gt;communicate and disseminate ideas simply and directly&lt;/strong&gt;. This is the first motivating goal for starting this blog.&lt;/p&gt;
+
+&lt;p&gt;The second motivating goal boils down to &lt;strong&gt;write early and write often&lt;/strong&gt;. Others, people much more practiced and eloquent than I, have written about many good reasons on the topic of writing often. I am especially motivated by Titus Brown, who &lt;a href=&quot;http://ivory.idyll.org/blog/advice-to-graduate-students.html&quot;&gt;has written&lt;/a&gt; &lt;a href=&quot;http://ivory.idyll.org/blog/why-i-blog-2013-version.html&quot;&gt;several times&lt;/a&gt; on what he perceives to be personal and professional benefits to blogging. He writes, succinctly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;But at the end of the day, I write blog posts because I want to figure out why I think what I think.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And I think that this touches the important point: blogging is not necessarily for others—it is foremost a personal, self-motivated effort to organize thoughts. This is perhaps not different from the organization required to compose a scientific publication, a book chapter, or even a letter to the editor—but these activities are often procedurally slow and infrequent. But blogging, it seems, presents the opportunity to iterate quickly and to write early and often.&lt;/p&gt;
+
+&lt;p&gt;And then there’s the inimitable &lt;a href=&quot;http://en.wikipedia.org/wiki/Paul_Graham_(computer_programmer)&quot;&gt;Paul Graham&lt;/a&gt;, computer-programmer-turned-investor/writer, who writes in the highly enjoyable &lt;a href=&quot;http://www.paulgraham.com/essay.html&quot;&gt;“The Age of the Essay”&lt;/a&gt; that writing essays (or blogging, a word omitted by Graham in the essay but certainly on his mind) is all about finding the unexpected in the world, and in doing so educating not only your reader, but your self as well:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Collecting surprises is a similar process. The more anomalies you’ve seen, the more easily you’ll notice new ones. Which means, oddly enough, that as you grow older, life should become more and more surprising. When I was a kid, I used to think adults had it all figured out. I had it backwards. Kids are the ones who have it all figured out. They’re just mistaken.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Crucially, however, it seems that much of the insight into the “why I blog” question can only come later, after a few years of blogging. Thus, with no data to support how blogging has brought—or will bring—about a profound change in me is just talk. &lt;/p&gt;
+
+&lt;p&gt;Nonetheless, I can describe some existing results. Whereas this year I plan to experiment with blogging, 2013 was an experiment in Twitter. And, just over a year into using the medium, I’m happy report it has become an indispensable part of how I learn, consume information, and discover. (To be honest, it’s somewhat unclear to me how I came across new things &lt;em&gt;before&lt;/em&gt; twitter. I can only remember mindless reading of various sub-par news sites and “social media”—something I’ve nearly eliminated today).&lt;/p&gt;
+
+&lt;p&gt;On twitter (&lt;a href=&quot;http://twitter.com/nik_krumm/&quot;&gt;@nik_krumm&lt;/a&gt;), I’ve been lucky enough to find niches of interesting people to follow: other scientists, bioinformaticians, graduate students, programmers, designers. The fast, easy and asymmetric relationships that twitter thrives on make this easy. When I’m interested in something or someone new, I follow them; just as easily I might unfollow them when our interests diverge in the future. It’s a more tailored firehose, one crafted to my current interests, and changing at any time. &lt;/p&gt;
+
+&lt;p&gt;But that tailored firehose is often wildly out of control. Twitter rarely brings up the past— once information streams past you, it’s gone. Even my own tweets are often lost in the never-ending stream, pushed to the depths of the infinitely scrolling abyss. I do use &lt;a href=&quot;http://getpocket.com&quot;&gt;Pocket&lt;/a&gt; to keep links that I find interesting, but this solves only the storage part of the problem— what’s missing is permanence as &lt;em&gt;more than just a record of what happened&lt;/em&gt;. In order to learn, we must be reminded and recontacted again and again; without this, twitter rapidly becomes a mindless feed of information, to be consumed and then immediately forgotten. A final motivating factor for creating this blog was to &lt;strong&gt;create something more permanent&lt;/strong&gt;, something that I (and maybe even others) can reference in the future, in both a reflective sense and a constructive sense.&lt;/p&gt;
+
+&lt;h3 id=&quot;things-and-topics-and-such&quot;&gt;Things and topics and such&lt;/h3&gt;
+
+&lt;p&gt;One thing that I have taken away from reading the advice of others on blogging has been that you should only write about the topics you know best. In other words, nobody wants to hear your bull****.&lt;/p&gt;
+
+&lt;p&gt;For me, that means most of posts will be technical in nature:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Little bits of science that did not make it into other publications.&lt;/li&gt;
+  &lt;li&gt;Bioinformatics code and hacks that I’ve created and could use a bit more 	explanation, but might prove useful.&lt;/li&gt;
+  &lt;li&gt;Project ideas I have that would be fun to try.&lt;/li&gt;
+  &lt;li&gt;Thoughts and views from inside the medical world (I will be returning to finish medical school in July 2014)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The concrete goal&lt;/strong&gt;: At least six major posts this year (given that making the blog has taken nearly 4 months…)&lt;/p&gt;
+
+&lt;h3 id=&quot;how-is-this-blog-made&quot;&gt;How is this blog made?&lt;/h3&gt;
+
+&lt;p&gt;This blog is a “static site”, meaning it uses no backend (e.g., Wordpress) and instead is served as just pre-compiled HTML files. I write posts in modified plain text using &lt;a href=&quot;http://en.wikipedia.org/wiki/Markdown&quot;&gt;markdown&lt;/a&gt;, and transform them into HTML using &lt;a href=&quot;http://jekyllrb.com&quot;&gt;jekyll&lt;/a&gt;. The HTML template itself is derived from &lt;a href=&quot;http://www.getskeleton.com&quot;&gt;Skeleton&lt;/a&gt;, which provides simple and straightforward CSS resets and mobile-friendly responsiveness.&lt;/p&gt;
+
+&lt;p&gt;I also use the  &lt;a href=&quot;https://github.com/inukshuk/jekyll-scholar&quot;&gt;&lt;code&gt;jekyll-scholar&lt;/code&gt;&lt;/a&gt; plugin to manage the citations page. This makes adding new citations easy: I just export a new Bibtex library from my desktop citation manager, the highly recommended &lt;a href=&quot;http://www.papersapp.com/&quot;&gt;Papers&lt;/a&gt;, and &lt;code&gt;jekyll-scholar&lt;/code&gt; will automatically format a new page for me. This currently does complicate the deployment, as github-pages does not support extensions. See &lt;a href=&quot;https://gist.github.com/nkrumm/11132953&quot;&gt;this gist&lt;/a&gt; for how I deploy currently (and suggestions welcome here). In the future, I might move to a self-hosted solution.&lt;/p&gt;
+
+&lt;p&gt;There’s quite a few things here that still need improvement. For one, the fonts and typography are currently borderline atrocious. I realize it is near impossible to see the links in the text. I apologize for this. There are also quite a few missing links and pages—look for an updated projects page soon.&lt;/p&gt;
+
+&lt;p&gt;I would love to hear from you—drop me a line via &lt;a href=&quot;http://twitter.com/nik_krumm/&quot;&gt;@nik_krumm&lt;/a&gt; on twitter!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thanks for reading, I truly appreciate it!&lt;/strong&gt; &lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;While I’m told I could probably weather this, I’d rather not try :) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+				<pubDate>Sun, 20 Apr 2014 22:25:33 +0000</pubDate>
+				<link>nkrumm.github.io/posts/2014/04/20/blogwagon.html</link>
+				<guid isPermaLink="true">nkrumm.github.io/posts/2014/04/20/blogwagon.html</guid>
+			</item>
+		
+	</channel>
+</rss>
